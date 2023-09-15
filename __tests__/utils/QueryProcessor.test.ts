@@ -22,7 +22,7 @@ describe("QueryProcessor", () => {
         const query = "andrew id";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Your Andrew Id is unique! I don't know!"
+            "My Andrew Id is lmarinov!"
           ));
     });
 });
