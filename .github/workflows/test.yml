@@ -13,7 +13,7 @@ branches:
 
 jobs:
 
-test2:
+  test2:
 
     runs-on: ubuntu-latest
 
