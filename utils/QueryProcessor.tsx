@@ -34,12 +34,24 @@ export default function QueryProcessor(query: string): string {
     return (x > y ? x : y > z ? y : z).toString();
   }
 
-  const multMatch = query.match(/What is (\d+) multipled by (\d+)/);
+  const multMatch = query.match(/What is (\d+) multiplied by (\d+)/);
   if (multMatch) {
     const x: number = parseInt(multMatch[1]);
     const y: number = parseInt(multMatch[2]);
     return (x * y).toString();
   }
+
+  // const sqrMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  // if (sqrMatch) {
+  //   let arr: number[] = new Array(parseInt(sqrMatch[1]), parseInt(sqrMatch[2]), parseInt(sqrMatch[3]), parseInt(sqrMatch[4]), parseInt(sqrMatch[5]), parseInt(sqrMatch[6]), parseInt(sqrMatch[7]));
+  //   let max = arr[1];
+  //   for(let i=2; i<arr.length; i++){
+  //     if (arr[i] > max) {
+  //       max = arr[i];
+  //     }
+  //   }
+  //   return (max).toString();
+  // }
 
   return "";
 }

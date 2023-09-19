@@ -48,6 +48,6 @@ describe("QueryProcessor", () => {
     });
 
     test('should multiply numbers', () => {
-      expect(QueryProcessor("What is 5 multipled by 5?")).toEqual("25");
+      expect(QueryProcessor("What is 5 multiplied by 5?")).toEqual("25");
     });
 });
