@@ -19,6 +19,14 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  const add2Match = query.match(/What is (\d+) plus (\d+) plus (\d+)/);
+  if (add2Match) {
+    const x: number = parseInt(add2Match[1]);
+    const y: number = parseInt(add2Match[2]);
+    const z: number = parseInt(add2Match[3]);
+    return (x+y+z).toString();
+  }
+
   const addMatch = query.match(/What is (\d+) plus (\d+)/);
   if (addMatch) {
     const x: number = parseInt(addMatch[1]);
