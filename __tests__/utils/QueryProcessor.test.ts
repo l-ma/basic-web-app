@@ -50,4 +50,8 @@ describe("QueryProcessor", () => {
     test('should multiply numbers', () => {
       expect(QueryProcessor("What is 5 multiplied by 5?")).toEqual("25");
     });
+
+    test('sqr cube', () => {
+      expect(QueryProcessor("Which of the following numbers is both a square and a cube: 1302, 3784, 2401, 2211, 4096, 1, 448?")).toEqual("3784");
+    });
 });

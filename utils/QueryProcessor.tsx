@@ -41,17 +41,22 @@ export default function QueryProcessor(query: string): string {
     return (x * y).toString();
   }
 
-  // const sqrMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
-  // if (sqrMatch) {
-  //   let arr: number[] = new Array(parseInt(sqrMatch[1]), parseInt(sqrMatch[2]), parseInt(sqrMatch[3]), parseInt(sqrMatch[4]), parseInt(sqrMatch[5]), parseInt(sqrMatch[6]), parseInt(sqrMatch[7]));
-  //   let max = arr[1];
-  //   for(let i=2; i<arr.length; i++){
-  //     if (arr[i] > max) {
-  //       max = arr[i];
-  //     }
-  //   }
-  //   return (max).toString();
-  // }
+  const sqrMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  if (sqrMatch) {
+    let arr: number[] = new Array(parseInt(sqrMatch[1]), parseInt(sqrMatch[2]), parseInt(sqrMatch[3]), parseInt(sqrMatch[4]), parseInt(sqrMatch[5]), parseInt(sqrMatch[6]), parseInt(sqrMatch[7]));
+    let sqr = arr[1];
+    for(let i=2; i<arr.length; i++){
+      if (Math.sqrt(arr[i]) % 1 === 0) {
+          for (let j = 0; j <= arr[i]; j++) {
+              let cube = i * i * i;
+              if (cube == arr[i]) {
+                  sqr = arr[i];
+              }
+          }
+      }
+    }
+    return (sqr).toString();
+  }
 
   return "";
 }
