@@ -51,6 +51,10 @@ describe("QueryProcessor", () => {
       expect(QueryProcessor("What is 5 plus 2 plus 5?")).toEqual("12");
     });
 
+    test('prime', () => {
+      expect(QueryProcessor("Which of the following numbers are primes: 14, 12, 48, 2, 47?")).toEqual("47");
+    });
+
     test('should subtract numbers', () => {
       expect(QueryProcessor("What is 5 minus 2?")).toEqual("3");
     });

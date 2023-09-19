@@ -56,6 +56,21 @@ export default function QueryProcessor(query: string): string {
     return (x * y).toString();
   }
 
+  const primeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  if (primeMatch) {
+    let arr: number[] = new Array(parseInt(primeMatch[1]), parseInt(primeMatch[2]), parseInt(primeMatch[3]), parseInt(primeMatch[4]), parseInt(primeMatch[5]));
+    let p = arr[1];
+    for (let i = 1; i < arr.length; i++) {
+      for(let j = 2; j <= Math.sqrt(arr[i]); j++) {
+        if(j % i === 0) {
+          continue
+        }
+      }
+      p = arr[i]
+    }
+    return (p).toString();
+  }
+
   const sqrMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
   if (sqrMatch) {
     let arr: number[] = new Array(parseInt(sqrMatch[1]), parseInt(sqrMatch[2]), parseInt(sqrMatch[3]), parseInt(sqrMatch[4]), parseInt(sqrMatch[5]), parseInt(sqrMatch[6]), parseInt(sqrMatch[7]));
