@@ -32,5 +32,13 @@ describe("QueryProcessor", () => {
       expect(response).toBe((
           "lara"
         ));
-  });
+    });
+
+    test('86', () => {
+      const query = "Which of the following numbers is the largest: 48, 86, 51?";
+      const response: string = QueryProcessor(query);
+      expect(response).toBe((
+          "86"
+        ));
+    });
 });
